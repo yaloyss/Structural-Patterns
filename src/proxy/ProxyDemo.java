@@ -4,11 +4,8 @@ public class ProxyDemo {
     public static void main(String[] args) {
         Image image = new ProxyImage("photo.jpg");
 
-        //перше звернення завантажує зображення
-        image.display();
+        image.display(); //перше звернення завантажує
         System.out.println();
-        //друге звернення не буде завантажувати, а одразу покаже
-        image.display();
-        //відкладене завантаження
+        image.display(); //друге звернення не буде завантажувати, а одразу покаже
     }
 }

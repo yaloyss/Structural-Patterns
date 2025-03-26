@@ -2,17 +2,23 @@ package proxy;
 
 public class RealImage implements Image {
     private String imageName;
+    private boolean isLoaded;
 
     public RealImage(String imageName) {
         this.imageName = imageName;
-        loadFromDisk();
+        this.isLoaded = false;
     }
 
-    private void loadFromDisk() {
-        System.out.println("Loading imageName " + imageName);
+    private void loadImage()
+    {
+        if(!isLoaded) {
+            System.out.println("Loading image " + imageName);
+            isLoaded = true;
+        }
     }
-
+@Override
     public void display() {
-        System.out.println("Displaying imageName " + imageName);
+        loadImage();
+        System.out.println("Displaying image " + imageName);
     }
 }
